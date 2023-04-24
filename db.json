@@ -1,0 +1,25 @@
+{
+  "products": [
+    {
+      "productName": "keyboard",
+      "productImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeD_TWF22hSyiUImkJCSqLC3IwH5OEXN-ObLk7fuUrvg&s",
+      "productDescription": "white",
+      "productPrice": "2000",
+      "id": 9
+    },
+    {
+      "productName": "bagg",
+      "productImg": "https://www.cuyana.com/dw/image/v2/BDQQ_PRD/on/demandware.static/-/Sites-master-catalog-cuyana/default/dw60696187/images/2023_01Jan/easy-tote-dark-coral/PLP_Hero_1080x1350_SP23_EasyTote_DarkCoral_Hero_2785.jpg?sw=768&sh=1152",
+      "productDescription": "red bag",
+      "productPrice": "23.0",
+      "id": 10
+    },
+    {
+      "productName": "bulb",
+      "productImg": "data:image/webp;base64,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",
+      "productDescription": "get your fluorescent bulbs",
+      "productPrice": "30",
+      "id": 11
+    }
+  ]
+}
