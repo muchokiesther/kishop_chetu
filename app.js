@@ -13,7 +13,7 @@ class Product{
         <img src=${this.product.productImg} alt="${this.product.productName}" >
         <div class="product-item__content">
           <h2>${this.product.productName}</h2>
-          <h3>\$ ${this.product.productPrice}</h3>
+          <h3> ${this.product.productPrice}</h3>
           <p>${this.product.productDescription}</p>
           <button onclick="new Product().updateProduct(${this.product.id})">update</button>
          <button onclick="new Product().deleteProduct(${this.product.id})" ><ion-icon name="trash-outline"></ion-icon></button>
@@ -29,27 +29,37 @@ class Product{
  async addtocart(id){
     const response = await fetch(`http://localhost:3000/products/${id}`)
     const product = await response.json()
+    
      const cartsentails = document.createElement('div')
      cartsentails.classList.add('cart-item')
      cartsentails.innerHTML = `
-     <div class = in_cart>
+     <div class = 'in_cart'>
     
       <img src=${product.productImg} alt="" >
        <h2>${product.productName}</h2>
-       <p>Price: ${product.productPrice}</p> <button class ="remove_cart">REMOVE</button>
+       <p id="cart_price"> ${product.productPrice}</p> <button class ="remove_cart">REMOVE</button>
        </div>
      `
+
+
      const cartProductlists = document.querySelector('#cart_lists')
      cartProductlists.appendChild(cartsentails)
      const cart = []
-    //  const cartTotal = document.querySelector('.tprice')
-    const getTotalPrice = (items) => items
-    .map((item) => item.price)
-    .reduce((acc, value) => acc + value, 0)
-  
-  const result = getTotalPrice(cart);
-  
-  console.log({ result });
+     const total =  document.querySelector(".tprice")
+     let quantity = parseInt(product.productPrice)
+     if (quantity= product.productPrice) {
+        quantity = parseInt(quantity)+ parseInt(product.productPrice)
+        return quantity;
+     }
+
+    // quantity = quantity+ parseInt(product.productPrice)
+    total.innerHTML  += quantity 
+    // console.log(typeof quantity);
+      
+                   
+
+
+
 }
 
     async deleteProduct(id) {
