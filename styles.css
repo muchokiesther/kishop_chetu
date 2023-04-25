@@ -185,8 +185,8 @@ button:active {
 
 }
 .in_cart img{
-width:20%;
-height: 10%;
+width:50%;
+height: 30%;
 }
 .remove_cart{
   background-color: azure;

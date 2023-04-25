@@ -1,3 +1,4 @@
+let cart = []
 class Product{
     //deal with a single product
 
@@ -37,26 +38,38 @@ class Product{
     
       <img src=${product.productImg} alt="" >
        <h2>${product.productName}</h2>
-       <p id="cart_price"> ${product.productPrice}</p> <button class ="remove_cart">REMOVE</button>
+       <p id="cart_price"> ${product.productPrice}</p>
+        <button class ="remove_cart"  >REMOVE</button>
        </div>
      `
 
-
      const cartProductlists = document.querySelector('#cart_lists')
      cartProductlists.appendChild(cartsentails)
-     const cart = []
-     const total =  document.querySelector(".tprice")
-     let quantity = parseInt(product.productPrice)
-     if (quantity= product.productPrice) {
-        quantity = parseInt(quantity)+ parseInt(product.productPrice)
-        return quantity;
-     }
+     cart.push(product)
+     
+     const total = document.querySelector('.tprice')
+//const calculatePrice = cart.reduce((acc, curr) => acc + parseFloat(curr.productPrice), 0)
+const calculatePrice = cart.reduce(function(acc, curr)  {
+    return acc + parseFloat(curr.productPrice)},0)
+
+total.textContent=calculatePrice
+
+   
+   
+    //  let cart = []
+    //  const total =  document.querySelector(".tprice")
+    //  let quantity = parseInt(product.productPrice)
+    // cart.push(quantity)
+    // console.log(cart)
+    //  if (quantity= product.productPrice) {
+    //     quantity = parseInt(quantity)+ parseInt(product.productPrice)
+    //     // return quantity;
+    //  }
 
     // quantity = quantity+ parseInt(product.productPrice)
-    total.innerHTML  += quantity 
-    // console.log(typeof quantity);
+    // total.innerHTML  = quantity 
       
-                   
+    //          console.log( quantity)    
 
 
 
