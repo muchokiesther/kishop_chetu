@@ -178,21 +178,39 @@ button:active {
 }
 
 #cart_lists{
-  background-color: aqua;
+  background-color: rgb(180, 209, 253);
   margin-left: 1%;
   margin-right: 60%;
-  justify-items: center;
+  display: grid;
+  align-content: center;
+  align-items: center;
+  margin-top: 50px;
+  margin-left: 30px;
+  text-align: center;
 
 }
 .in_cart img{
-width:50%;
+width:30%;
 height: 30%;
 }
 .remove_cart{
-  background-color: azure;
+  background-color: rgb(245, 184, 133);
   color: black;
   height: min-content;
 width: min-content;
 margin-bottom: 13.5px;
 }
 
+.in_cart{
+background-color: aliceblue;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+
+}
+.tprice{
+  font-weight: bold;
+  margin-top: -10px;
+  font-size: 15.5px;
+}

@@ -28,8 +28,22 @@ class Product{
     }
 
  async addtocart(id){
-    const response = await fetch(`http://localhost:3000/products/${id}`)
+    const response = await fetch(`http://localhost:3000/products/${id}`) //this is used to fetch(get) product by id
     const product = await response.json()
+    // const cartResponse1 = await fetch('http://localhost:3000/cart')
+    // const prod1 =  await cartResponse1.json()
+    
+    // const cartResponse = await fetch('http://localhost:3000/cart', { // used to post the product to the cart...
+    //     method: 'POST',
+    //     body:JSON.stringify(product),
+
+    //     headers: {
+    //       'Content-Type': 'application/json'
+    //     }
+    //   });
+      
+
+
     
      const cartsentails = document.createElement('div')
      cartsentails.classList.add('cart-item')
@@ -48,13 +62,12 @@ class Product{
      cart.push(product)
      
      const total = document.querySelector('.tprice')
-//const calculatePrice = cart.reduce((acc, curr) => acc + parseFloat(curr.productPrice), 0)
 const calculatePrice = cart.reduce(function(acc, curr)  {
-    return acc + parseFloat(curr.productPrice)},0)
+    return acc + parseInt(curr.productPrice)},0)
 
 total.textContent=calculatePrice
 
-   
+}
    
     //  let cart = []
     //  const total =  document.querySelector(".tprice")
@@ -73,7 +86,7 @@ total.textContent=calculatePrice
 
 
 
-}
+
 
     async deleteProduct(id) {
         await fetch(`http://localhost:3000/products/${id}`, {
@@ -82,6 +95,7 @@ total.textContent=calculatePrice
                 "Content-Type": "application/json"
             }
         })
+        
     }
     async updateProduct(id){
         const response = await fetch(`http://localhost:3000/products/${id}`)
