@@ -28,7 +28,7 @@ class Product{
     }
 
  async addtocart(id){
-    const response = await fetch(`http://localhost:3000/products/${id}`) //this is used to fetch(get) product by id
+    const response = await fetch(`https://kishop-chetu.onrender.com/products/${id}`) //this is used to fetch(get) product by id
     const product = await response.json()
     // const cartResponse1 = await fetch('http://localhost:3000/cart')
     // const prod1 =  await cartResponse1.json()
@@ -89,7 +89,7 @@ total.textContent=calculatePrice
 
 
     async deleteProduct(id) {
-        await fetch(`http://localhost:3000/products/${id}`, {
+        await fetch(`https://kishop-chetu.onrender.com/products/${id}`, {
             method:'DELETE',
             headers:{
                 "Content-Type": "application/json"
@@ -98,7 +98,7 @@ total.textContent=calculatePrice
         
     }
     async updateProduct(id){
-        const response = await fetch(`http://localhost:3000/products/${id}`)
+        const response = await fetch(`https://kishop-chetu.onrender.com/products/${id}`)
         const product = await response.json()
       
        this.prePopulate(product)
@@ -117,7 +117,7 @@ total.textContent=calculatePrice
 
     async sendUpdate(product){
         
-        await fetch(`http://localhost:3000/products/${product.id}`, {
+        await fetch(`https://kishop-chetu.onrender.com/products/${product.id}`, {
             method:'PUT',
             body:JSON.stringify(product),
             headers:{
@@ -177,7 +177,7 @@ class ProductList{
      }
 
      async fetchProduct(){
-        const response = await fetch('http://localhost:3000/products')
+        const response = await fetch('https://kishop-chetu.onrender.com/products/')
         const products = await response.json()
         return products
      }
